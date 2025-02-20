@@ -1,0 +1,10 @@
+01  WS-DATA PIC 9(5) VALUE 12345.
+01  WS-DATA-EXT PIC 9(6).
+
+      ADD 1 TO WS-DATA.
+      IF WS-DATA > 99999 THEN
+          MOVE WS-DATA TO WS-DATA-EXT
+          DISPLAY "Overflow occurred: " WS-DATA-EXT
+      ELSE
+          DISPLAY WS-DATA
+      END-IF.
